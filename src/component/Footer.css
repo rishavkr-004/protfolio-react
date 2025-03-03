@@ -1,0 +1,42 @@
+/* Footer.css */
+
+footer {
+    background-color: #343a40; /* Dark background color */
+    color: white; /* Text color */
+    padding: 1rem 0; /* Padding for top and bottom */
+    margin-top: 2rem; /* Margin at the top */
+  }
+  
+  footer p {
+    margin-bottom: 0;
+  }
+  
+  footer .container {
+    text-align: center; /* Center text in the container */
+  }
+  footer .social-icons {
+    margin-top: 10px;
+  }
+  
+  footer .social-icon {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer .social-icon:hover {
+    color: #007bff;
+  }
+  
+  footer .social-icon i {
+    transition: color 0.3s ease;
+  }
+  
+  @media (max-width: 576px) {
+    footer .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+  

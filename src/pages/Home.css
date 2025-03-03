@@ -1,0 +1,166 @@
+/* Container Styling */
+.home-container {
+  display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center content */
+    justify-content: center; /* Vertically center content */
+    height: 100vh; /* Full viewport height */
+    padding: 50px;
+    background-color: #f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: auto;
+    transition: transform 0.3s ease-in-out;
+    text-align: center; /* Center align text */
+}
+
+/* Hover Effect */
+.home-container:hover {
+  transform: translateY(-10px); /* subtle hover effect */
+}
+
+/* Image Container */
+.home-image-container {
+  position: relative;
+  margin-bottom: 30px; /* Space between image and text */
+}
+
+.home-image {
+  width: 200px; /* Set the image size */
+  height: 200px;
+  border-radius: 50%; /* Circle effect */
+  object-fit: cover; /* Ensure the image fits perfectly */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow around the image */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect on Image */
+.home-image:hover {
+  box-shadow: 0 0 30px rgba(0, 123, 255, 1); /* Increase glow on hover */ /* Slightly zoom image on hover */
+}
+
+/* Home Title Styling */
+.home-title {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.home-title:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* Home Description Styling */
+.home-description {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 30px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.home-description:hover {
+  opacity: 0.8; /* Slight fade effect on hover */
+}
+
+/* Additional Information */
+.home-details {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.button {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 12px;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -4px;
+  top: -1px;
+  margin: auto;
+  width: 128px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+
+
+
+.home-btn:hover {
+  background-color: #0056b3; /* Darken button on hover */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+/* Button focus style */
+.home-btn:focus {
+  outline: none;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 30px; /* Adjust padding for smaller screens */
+  }
+
+  .home-image {
+    width: 150px; /* Smaller image on mobile */
+    height: 150px;
+  }
+
+  .home-title {
+    font-size: 2rem; /* Smaller title font size */
+  }
+
+  .home-description {
+    font-size: 1rem; /* Adjust description font size */
+  }
+
+  .home-btn {
+    padding: 10px 20px; /* Smaller button padding */
+  }
+}
