@@ -1,44 +1,48 @@
-/* Import the Poppins font used in the design */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
-
 /* =========================================
-   1. GLOBAL THEME VARIABLES
+   GLOBAL THEME VARIABLES
+   These control the colors for the whole app
    ========================================= */
+
+/* Default Light Mode Colors */
 :root {
-  --bg-color: #ffffff;           /* Left side background - Light */
-  --text-primary: #1a1a1a;       /* Main text - Light */
-  --text-secondary: #666666;     /* Paragraph text - Light */
+  --bg-color: #ffffff;           
+  --text-primary: #1a1a1a;       
+  --text-secondary: #666666;     
   --btn-outline: #e5e5e5;
   --stat-text: #1a1a1a;
   --badge-bg: #fff8e1;
   --badge-text: #ffb300;
 }
 
+/* Dark Mode Colors (Activated by Navbar toggle) */
 body.dark-mode {
-  --bg-color: #0b0f19;           /* Left side background - Dark */
-  --text-primary: #ffffff;       /* Main text - Dark */
-  --text-secondary: #a1a1aa;     /* Paragraph text - Dark */
+  --bg-color: #0b0f19;           
+  --text-primary: #ffffff;       
+  --text-secondary: #a1a1aa;     
   --btn-outline: #3f3f46;
   --stat-text: #ffffff;
   --badge-bg: rgba(255, 179, 0, 0.15);
 }
 
 /* =========================================
-   2. GLOBAL HTML/BODY STYLES
+   GLOBAL HTML/BODY STYLES
    ========================================= */
+
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0;
-  overflow-x: hidden;
+  /* This creates the smooth fade effect when toggling themes */
+  transition: background-color 0.3s ease, color 0.3s ease; 
+  overflow-x: hidden; 
 }
 
 /* =========================================
-   3. APP LAYOUT STYLES
-   These replace Bootstrap to keep the Footer at the bottom
+   APP LAYOUT STYLES
+   Replaces Bootstrap to keep the Footer at the bottom
    ========================================= */
+
 .app-layout {
   display: flex;
   flex-direction: column;
@@ -51,8 +55,4 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-}
-
-html {
-  scroll-behavior: smooth;
 }
