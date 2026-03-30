@@ -1,0 +1,58 @@
+/* Import the Poppins font used in the design */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* =========================================
+   1. GLOBAL THEME VARIABLES
+   ========================================= */
+:root {
+  --bg-color: #ffffff;           /* Left side background - Light */
+  --text-primary: #1a1a1a;       /* Main text - Light */
+  --text-secondary: #666666;     /* Paragraph text - Light */
+  --btn-outline: #e5e5e5;
+  --stat-text: #1a1a1a;
+  --badge-bg: #fff8e1;
+  --badge-text: #ffb300;
+}
+
+body.dark-mode {
+  --bg-color: #0b0f19;           /* Left side background - Dark */
+  --text-primary: #ffffff;       /* Main text - Dark */
+  --text-secondary: #a1a1aa;     /* Paragraph text - Dark */
+  --btn-outline: #3f3f46;
+  --stat-text: #ffffff;
+  --badge-bg: rgba(255, 179, 0, 0.15);
+}
+
+/* =========================================
+   2. GLOBAL HTML/BODY STYLES
+   ========================================= */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   3. APP LAYOUT STYLES
+   These replace Bootstrap to keep the Footer at the bottom
+   ========================================= */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the app is at least as tall as the screen */
+  background-color: var(--bg-color);
+}
+
+.main-content {
+  flex: 1; /* Forces this section to grow and push the footer down */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.custom-navbar {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0b0f19; /* Deep dark blue/black from the image */
+  padding: 0 5%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Logo Styling --- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logo-icon {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 24px;
+}
+
+.icon-bar {
+  width: 8px;
+  border-radius: 2px;
+}
+
+.icon-bar.purple {
+  height: 100%;
+  background-color: #8b5cf6;
+}
+
+.icon-bar.orange {
+  height: 60%;
+  background-color: #f59e0b;
+}
+
+/* --- Navigation Links --- */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #a1a1aa; /* Light gray */
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+}
+
+.nav-item.active-link {
+  color: #8b5cf6; /* Purple accent for active page */
+  font-weight: 600;
+}
+
+/* --- Action Buttons --- */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.chat-btn {
+  background-color: #ffffff;
+  color: #0b0f19;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.chat-btn:hover {
+  background-color: #e5e5e5;
+  color: #0b0f19;
+  transform: translateY(-2px);
+}
+
+/* Mobile Responsiveness (Basic) */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* In a real app, you'd trigger a hamburger menu here */
+  }
+}

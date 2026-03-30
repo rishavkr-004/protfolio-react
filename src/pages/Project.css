@@ -1,0 +1,228 @@
+/* =========================================
+   General Section Layout
+   ========================================= */
+.section-container {
+  padding: 100px 8%;
+  background-color: var(--bg-color); /* Listens to Dark Mode */
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Purple underline accent for headers */
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 60%;
+  height: 4px;
+  background-color: #8a3ffc;
+  border-radius: 2px;
+}
+
+/* =========================================
+   About Section Styling
+   ========================================= */
+.about-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1.5;
+}
+
+.about-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.about-text p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+/* --- Skills Box --- */
+.skills-container {
+  flex: 1;
+  background: rgba(138, 63, 252, 0.03);
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid var(--btn-outline);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-container:hover {
+  border-color: rgba(138, 63, 252, 0.4);
+  box-shadow: 0 10px 30px rgba(138, 63, 252, 0.05);
+}
+
+.skills-container h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --- Skill Tags with Hover Effects --- */
+.skill-tag {
+  background-color: var(--bg-color);
+  border: 1px solid var(--btn-outline);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: default;
+  /* Smooth animation for the hover state */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.skill-tag:hover {
+  background-color: #8a3ffc;
+  border-color: #8a3ffc;
+  color: #ffffff;
+  transform: translateY(-3px); /* Slight lift */
+  box-shadow: 0 5px 15px rgba(138, 63, 252, 0.3); /* Purple glow */
+}
+
+/* =========================================
+   Projects Section Styling
+   ========================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* --- Interactive Project Cards --- */
+.project-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--btn-outline);
+  border-radius: 16px;
+  padding: 35px;
+  position: relative;
+  overflow: hidden;
+  /* Premium smooth transition */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-10px); /* Card floats up */
+  border-color: #8a3ffc; /* Border turns purple */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Deep shadow appears */
+}
+
+/* Optional: Add a subtle purple gradient glow inside the card on hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f9a8d4, #a78bfa);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* --- Card Content --- */
+.project-category {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8a3ffc;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project-card h3 {
+  font-size: 1.6rem;
+  margin: 0 0 15px 0;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: #8a3ffc; /* Title changes color on hover */
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 35px;
+}
+
+.project-tech span {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  background-color: rgba(138, 63, 252, 0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* --- View Source / Link Button --- */
+.project-link {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between text and arrow */
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-link {
+  color: #8a3ffc;
+  gap: 15px; /* Arrow slides to the right when card is hovered! */
+}
+
+/* =========================================
+   Mobile Responsiveness
+   ========================================= */
+@media (max-width: 900px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .section-container {
+    padding: 80px 5%;
+  }
+  
+  .skills-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
