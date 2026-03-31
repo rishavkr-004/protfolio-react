@@ -5,6 +5,9 @@ function Navbar({ persona, togglePersona }) {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark"; 
   });
+  
+  // State to control the mobile hamburger menu
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
@@ -16,8 +19,16 @@ function Navbar({ persona, togglePersona }) {
     }
   }, [darkMode]);
 
+  const toggleMobileMenu = () => {
+    setIsMobileOpen(!isMobileOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileOpen(false);
+  };
+
   return (
-    <nav className="custom-navbar">
+    <nav className={`custom-navbar ${darkMode ? 'navbar-glow-dark' : 'navbar-glow-light'}`}>
       <div className="navbar-container">
         
         <a className="navbar-logo" href="#home" style={{textDecoration: 'none'}}>
@@ -28,15 +39,27 @@ function Navbar({ persona, togglePersona }) {
           Rishav
         </a>
 
-        <ul className="navbar-links">
-          <li><a href="#home" className="nav-item">Home</a></li>
-          <li><a href="#about" className="nav-item">About Me</a></li>
-          <li><a href="#academic" className="nav-item">Education</a></li>
-          <li><a href="#project" className="nav-item">Projects</a></li>
-          <li><a href="#contact" className="nav-item">Contact</a></li>
+        {/* Navigation Links */}
+        <ul className={`navbar-links ${isMobileOpen ? "active" : ""}`}>
+          <li><a href="#home" className="nav-item" onClick={closeMobileMenu}>Home</a></li>
+          <li><a href="#about" className="nav-item" onClick={closeMobileMenu}>About Me</a></li>
+          <li><a href="#academic" className="nav-item" onClick={closeMobileMenu}>Education</a></li>
+          <li><a href="#project" className="nav-item" onClick={closeMobileMenu}>Projects</a></li>
+          <li><a href="#contact" className="nav-item" onClick={closeMobileMenu}>Contact</a></li>
+          
+          {/* Mobile-Only Actions inside the dropdown */}
+          <li className="mobile-actions">
+            <button onClick={() => { setDarkMode(!darkMode); closeMobileMenu(); }} className="theme-toggle mobile-theme-btn">
+              {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+            </button>
+            <button onClick={() => { togglePersona(); closeMobileMenu(); }} className="chat-btn mobile-persona-btn">
+              {persona === 'web' ? 'View Data Analyst' : 'View Web Developer'}
+            </button>
+          </li>
         </ul>
 
-        <div className="navbar-actions">
+        {/* Desktop-Only Actions */}
+        <div className="navbar-actions desktop-actions">
           <button 
             className={`theme-toggle ${darkMode ? 'dark-active' : ''}`} 
             onClick={() => setDarkMode(!darkMode)}
@@ -45,10 +68,16 @@ function Navbar({ persona, togglePersona }) {
             {darkMode ? "☀️" : "🌙"}
           </button>
           
-          {/* THE PERSONA TOGGLE BUTTON */}
           <button onClick={togglePersona} className="chat-btn" style={{ cursor: 'pointer', border: 'none' }}>
             {persona === 'web' ? 'View Data Analyst' : 'View Web Developer'}
           </button>
+        </div>
+
+        {/* Mobile Hamburger Icon */}
+        <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
+          <span className={`hamburger-bar ${isMobileOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-bar ${isMobileOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-bar ${isMobileOpen ? 'open' : ''}`}></span>
         </div>
 
       </div>

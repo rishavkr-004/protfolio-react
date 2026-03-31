@@ -12,7 +12,8 @@ function Project({ persona }) {
       title: "CampusConnect",
       description: "A comprehensive platform designed to streamline communication and resource sharing within college campuses. Built with secure user authentication and real-time updates.",
       tech: ["MERN", "Socket.io", "Git/Github", "Cloudinary"],
-      image: require('../assets/projectimg/campusconnect.jpg'), // Put your image in the public/images folder!
+      // Image pulled from src/assets/projectimg folder
+      image: require('../assets/projectimg/campusconnect.jpg'), 
       github: "https://github.com/SanskarSaurabh/Projexa-College-Project",
       live: "https://krmuconnect.vercel.app/"
     },
@@ -22,7 +23,8 @@ function Project({ persona }) {
       title: "Projexa",
       description: "A collaborative project management tool allowing teams to track tasks, manage workflows, and handle version control seamlessly in one unified dashboard.",
       tech: ["JavaScript", "Python", "CSS3"],
-      image: require('../assets/projectimg/campusconnect.jpg'),
+      // Update this path when you have the Projexa image!
+      image: require('../assets/projectimg/campusconnect.jpg'), 
       github: "https://github.com/SanskarSaurabh/Projexa-College-Project",
       live: "https://krmuconnect.vercel.app/"
     }
@@ -35,7 +37,8 @@ function Project({ persona }) {
       title: "Sales CAGR Tracker",
       description: "Designed a dynamic, interactive dashboard utilizing custom DAX measures to track Compound Annual Growth Rate (CAGR) and highlight regional sales deficiencies.",
       tech: ["Power BI", "DAX", "Excel"],
-      image: "/images/sales.png",
+      // Image pulled from the public/images folder
+      image: "/images/sales.png", 
       github: "https://github.com/yourusername/sales-cagr",
       live: "https://your-portfolio-link.com/sales-dashboard"
     },
@@ -45,7 +48,8 @@ function Project({ persona }) {
       title: "Customer Churn Analysis",
       description: "Extracted and cleaned historical customer data using complex SQL indexing, then applied predictive Python scripts to identify primary keys associated with high churn risk.",
       tech: ["SQL", "Python", "Pandas"],
-      image: "/images/churn.png",
+      // Image pulled from the public/images folder
+      image: "/images/churn.png", 
       github: "https://github.com/yourusername/churn-analysis",
       live: "https://your-portfolio-link.com/churn-report"
     }
@@ -93,7 +97,7 @@ function Project({ persona }) {
               <div className="slide-item" key={project.id}>
                 <div className="premium-project-card">
                   
-                  {/* Image Section */}
+                  {/* Image Section with Hover Overlay */}
                   <div className="project-image-container">
                     <img src={project.image} alt={project.title} className="project-image" />
                     <div className="project-overlay"></div>

@@ -1,54 +1,127 @@
-/* --- Typewriter Heading Effects --- */
-.typewriter-heading {
+/* =========================================
+   About Section - Premium Effects
+   ========================================= */
+
+.about-content {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.about-text {
+  flex: 1.5;
+}
+
+.about-text h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
-  color: #8a3ffc; /* Vibrant purple */
-  min-height: 35px; /* Prevents layout jumping while typing */
-  font-weight: 700;
-}
-
-/* The blinking line at the end of the typing text */
-.blinking-cursor {
-  font-weight: 300;
   color: var(--text-primary);
-  animation: blink 1s step-end infinite;
-  margin-left: 2px;
 }
 
-@keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* --- Text Reveal Effects for Paragraphs --- */
-.reveal-text {
+/* --- Moving Text & Cursor Changes --- */
+.about-text p {
   line-height: 1.8;
   color: var(--text-secondary);
   font-size: 1.1rem;
-  opacity: 0; /* Start hidden */
-  transform: translateY(20px); /* Start slightly lower */
-  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  /* Smooth transition for hover */
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: default; /* Clean default cursor for reading */
+}
+
+.about-text p:hover {
+  color: var(--text-primary); /* Brightens text */
+  transform: translateX(8px); /* Subtle slide to the right */
+  border-left: 3px solid #8a3ffc; /* Adds a clean indicator line */
+  padding-left: 15px; /* Spaces text from the line */
+}
+
+/* --- Scaling & Glowing Container --- */
+.skills-container {
+  flex: 1;
+  background: rgba(138, 63, 252, 0.03);
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid var(--btn-outline);
+  /* 3D Transform effect */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.skills-container:hover {
+  transform: translateY(-8px) scale(1.02); /* Lifts and slightly enlarges */
+  border-color: rgba(138, 63, 252, 0.5);
+  /* Deep outer shadow + Inner glowing rim */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 0 20px rgba(138, 63, 252, 0.05);
+}
+
+.skills-container h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --- Moving Elements: Floating Animation --- */
+@keyframes organicFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+/* --- Premium Skill Tags --- */
+.skill-tag {
+  background-color: var(--bg-color);
+  border: 1px solid var(--btn-outline);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  position: relative;
+  overflow: hidden; /* Keeps the shine effect inside the pill */
+  cursor: pointer; /* Premium interactive cursor */
   
-  /* Interactive hover slide */
-  transition: color 0.3s ease, transform 0.3s ease, border-left 0.3s ease, padding-left 0.3s ease;
+  /* Applying the floating animation */
+  animation: organicFloat 4s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Stagger the animations so they don't move like robots */
+.skill-tag:nth-child(even) { animation-delay: 1s; }
+.skill-tag:nth-child(3n) { animation-delay: 2s; }
+.skill-tag:nth-child(5n) { animation-delay: 0.5s; }
+
+/* The Hover State: Scale, Glow, Pause Float */
+.skill-tag:hover {
+  animation-play-state: paused; /* Stops floating when you touch it */
+  transform: translateY(-4px) scale(1.1); /* Pop out effect */
+  background-color: #8a3ffc;
+  border-color: #8a3ffc;
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(138, 63, 252, 0.4); /* Intense purple glow */
+  z-index: 10;
 }
 
-/* Stagger the delays so paragraph 1 loads, then 2, then 3 */
-.delay-1 { animation-delay: 0.2s; }
-.delay-2 { animation-delay: 0.4s; }
-.delay-3 { animation-delay: 0.6s; }
+/* --- The Glass Shine Effect --- */
+.skill-tag::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  /* Creates a slanted light beam */
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.5s ease;
+}
 
-/* Readability Hover Effect */
-.reveal-text:hover {
-  color: var(--text-primary);
-  transform: translateX(8px);
-  border-left: 3px solid #8a3ffc;
-  padding-left: 15px;
+/* Sweeps the light beam across the tag when hovered */
+.skill-tag:hover::after {
+  left: 150%;
+  transition: all 0.6s ease-in-out;
 }

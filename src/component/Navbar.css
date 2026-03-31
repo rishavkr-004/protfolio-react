@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+/* --- 1. Base Navbar & Glow Effect --- */
 .custom-navbar {
   font-family: 'Poppins', sans-serif;
   background-color: var(--bg-color); /* Respects dark mode */
@@ -11,7 +12,17 @@
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--btn-outline);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Premium Glow Effects depending on the theme */
+.navbar-glow-light {
+  box-shadow: 0 4px 20px rgba(138, 63, 252, 0.08); /* Soft purple glow */
+}
+
+.navbar-glow-dark {
+  box-shadow: 0 4px 20px rgba(138, 63, 252, 0.2); /* Deep neon purple glow */
+  border-bottom: 1px solid rgba(138, 63, 252, 0.2);
 }
 
 .navbar-container {
@@ -23,7 +34,7 @@
   margin: 0 auto;
 }
 
-/* --- Logo --- */
+/* --- 2. Logo --- */
 .navbar-logo {
   display: flex;
   align-items: center;
@@ -32,6 +43,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 0.5px;
+  z-index: 1001; /* Keeps logo above mobile menu */
 }
 
 .logo-icon {
@@ -41,22 +53,11 @@
   height: 24px;
 }
 
-.icon-bar {
-  width: 8px;
-  border-radius: 2px;
-}
+.icon-bar { width: 8px; border-radius: 2px; }
+.icon-bar.purple { height: 100%; background-color: #8a3ffc; }
+.icon-bar.orange { height: 60%; background-color: #f59e0b; }
 
-.icon-bar.purple {
-  height: 100%;
-  background-color: #8a3ffc;
-}
-
-.icon-bar.orange {
-  height: 60%;
-  background-color: #f59e0b;
-}
-
-/* --- Navigation Links --- */
+/* --- 3. Desktop Navigation Links --- */
 .navbar-links {
   display: flex;
   list-style: none;
@@ -73,11 +74,12 @@
   transition: color 0.3s ease;
 }
 
-.nav-item:hover {
-  color: var(--text-primary);
-}
+.nav-item:hover { color: #8a3ffc; }
 
-/* --- Actions --- */
+/* Hide mobile-specific buttons on desktop */
+.mobile-actions { display: none; }
+
+/* --- 4. Actions (Buttons) --- */
 .navbar-actions {
   display: flex;
   align-items: center;
@@ -102,6 +104,7 @@
 .theme-toggle:hover {
   background: rgba(138, 63, 252, 0.1);
   border-color: #8a3ffc;
+  box-shadow: 0 0 10px rgba(138, 63, 252, 0.3);
 }
 
 .chat-btn {
@@ -111,16 +114,104 @@
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .chat-btn:hover {
   background-color: #712df7;
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(138, 63, 252, 0.4);
 }
 
-@media (max-width: 768px) {
-  .navbar-links {
+/* --- 5. Mobile Hamburger Icon --- */
+.mobile-menu-icon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001; /* Keeps icon above mobile menu */
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-primary);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Transforms the bars into an X when open */
+.hamburger-bar.open:nth-child(1) { transform: translateY(9px) rotate(45deg); background-color: #8a3ffc; }
+.hamburger-bar.open:nth-child(2) { opacity: 0; }
+.hamburger-bar.open:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: #8a3ffc; }
+
+/* =========================================
+   6. Mobile Responsiveness (Dropdown Menu)
+   ========================================= */
+@media (max-width: 900px) {
+  /* Show hamburger icon */
+  .mobile-menu-icon {
+    display: flex; 
+  }
+
+  /* Hide desktop buttons */
+  .desktop-actions {
     display: none; 
+  }
+
+  /* Transform the navbar-links into a dropdown menu */
+  .navbar-links {
+    position: absolute;
+    top: 80px; /* Right below the navbar */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--btn-outline);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    
+    /* Animation settings */
+    clip-path: circle(0% at top right); /* Hides it gracefully */
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+
+  /* When the 'active' class is added via React */
+  .navbar-links.active {
+    clip-path: circle(150% at top right); /* Reveals it */
+  }
+
+  /* Make links bigger for fat fingers */
+  .nav-item {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  /* Show mobile actions inside the menu */
+  .mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .mobile-theme-btn {
+    width: 100%;
+    border-radius: 8px;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .mobile-persona-btn {
+    width: 100%;
+    height: 50px;
+    font-size: 1rem;
   }
 }
