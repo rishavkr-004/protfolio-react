@@ -1,7 +1,8 @@
 import React from 'react';
 import './Home.css'; 
 
-import About from './About.js'; 
+import About from './About.js';
+import Academic from './Academic.js'; 
 import Project from './Project.js'; 
 import Contact from './Contact.js'; 
 
@@ -53,15 +54,15 @@ function Home({ persona }) {
 
           <div className="hero-stats">
             <div className="stat-item">
-              <h2>{isWebDev ? "180" : "50+"}</h2>
-              <p>{isWebDev ? "Worldwide Clients" : "Datasets Analyzed"}</p>
+              <h2>{isWebDev ? "2" : "10+"}</h2>
+              <p>{isWebDev ? "Live Website" : "Datasets Analyzed"}</p>
             </div>
             <div className="stat-item">
-              <h2>{isWebDev ? "590" : "120"}</h2>
+              <h2>{isWebDev ? "5" : "5"}</h2>
               <p>{isWebDev ? "Project Done" : "Dashboards Created"}</p>
             </div>
             <div className="stat-item">
-              <h2>12</h2>
+              <h2>{isWebDev ? "0" : "0"}</h2>
               <p>Years Experience</p>
             </div>
           </div>
@@ -82,6 +83,11 @@ function Home({ persona }) {
       {/* Passing the state down to the next sections */}
       <section id="about">
         <About persona={persona} />
+      </section>
+
+      {/* NEW ACADEMIC SECTION ADDED HERE */}
+      <section id="academic">
+        <Academic />
       </section>
 
       <section id="project">

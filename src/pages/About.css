@@ -1,65 +1,54 @@
-/* About.css */
+/* --- Typewriter Heading Effects --- */
+.typewriter-heading {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #8a3ffc; /* Vibrant purple */
+  min-height: 35px; /* Prevents layout jumping while typing */
+  font-weight: 700;
+}
 
-/* General reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+/* The blinking line at the end of the typing text */
+.blinking-cursor {
+  font-weight: 300;
+  color: var(--text-primary);
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* --- Text Reveal Effects for Paragraphs --- */
+.reveal-text {
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly lower */
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
   
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-    margin: 0;
+  /* Interactive hover slide */
+  transition: color 0.3s ease, transform 0.3s ease, border-left 0.3s ease, padding-left 0.3s ease;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Container Styling */
-  .row {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .col-md-8 {
-    width: 66.6667%; /* Bootstrap 8/12 column */
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-  }
-  
-  /* Heading */
-  h1 {
-    text-align: center;
-    color: #333;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Paragraph Styling */
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #555;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .col-md-8 {
-      width: 90%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 2rem;
-    }
-    
-    p {
-      font-size: 1rem;
-    }
-  }
-  
+}
+
+/* Stagger the delays so paragraph 1 loads, then 2, then 3 */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Readability Hover Effect */
+.reveal-text:hover {
+  color: var(--text-primary);
+  transform: translateX(8px);
+  border-left: 3px solid #8a3ffc;
+  padding-left: 15px;
+}

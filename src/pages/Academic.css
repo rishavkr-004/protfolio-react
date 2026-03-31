@@ -1,0 +1,154 @@
+.academic-subtitle {
+  color: var(--text-secondary);
+  margin-top: -30px;
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+}
+
+/* The main container holding all education items */
+.academic-card {
+  background-color: var(--bg-color);
+  border: 1px solid var(--btn-outline);
+  border-radius: 16px;
+  padding: 50px 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+}
+
+.academic-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Individual Row Layout */
+.timeline-item {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Left Side (School) */
+.timeline-left {
+  flex: 0 0 200px; /* Fixed width for left column */
+  text-align: right;
+  padding-right: 30px;
+  padding-top: 5px;
+}
+
+.school-name {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.school-year {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Center Divider Line */
+.timeline-divider {
+  position: relative;
+  width: 3px;
+  background-color: #e5e5e5;
+  transition: background-color 0.3s ease;
+}
+
+/* Changes the line color in dark mode */
+body.dark-mode .timeline-divider {
+  background-color: #3f3f46; 
+}
+
+/* The dot on the line */
+.timeline-dot {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: var(--bg-color);
+  border: 3px solid #8a3ffc; /* Purple accent matching your theme */
+  transition: all 0.3s ease;
+}
+
+/* Right Side (Degree) */
+.timeline-right {
+  flex: 1;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+
+.degree-name {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.timeline-item:hover .degree-name {
+  color: #8a3ffc; /* Highlights title on hover */
+}
+
+.timeline-item:hover .timeline-dot {
+  background-color: #8a3ffc;
+  box-shadow: 0 0 10px rgba(138, 63, 252, 0.5);
+}
+
+.degree-desc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Smaller variant of your btn-secondary */
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Responsive adjustments for mobile phones */
+@media (max-width: 768px) {
+  .academic-card {
+    padding: 30px 20px;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+  }
+
+  .timeline-left {
+    flex: auto;
+    text-align: left;
+    padding-right: 0;
+    padding-left: 30px;
+    margin-bottom: 15px;
+  }
+
+  .timeline-divider {
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    bottom: 0;
+  }
+
+  .timeline-dot {
+    top: 0;
+  }
+
+  .timeline-right {
+    padding-left: 30px;
+  }
+}

@@ -31,6 +31,7 @@ function Navbar({ persona, togglePersona }) {
         <ul className="navbar-links">
           <li><a href="#home" className="nav-item">Home</a></li>
           <li><a href="#about" className="nav-item">About Me</a></li>
+          <li><a href="#academic" className="nav-item">Education</a></li>
           <li><a href="#project" className="nav-item">Projects</a></li>
           <li><a href="#contact" className="nav-item">Contact</a></li>
         </ul>
