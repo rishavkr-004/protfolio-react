@@ -64,6 +64,8 @@ function About({ persona }) {
                 <span className="skill-tag">Express.js</span>
                 <span className="skill-tag">JavaScript / HTML / CSS</span>
                 <span className="skill-tag">Git / GitHub</span>
+                <span className="skill-tag">Python</span>
+                <span className="skill-tag">Django</span>
               </>
             ) : (
               <>

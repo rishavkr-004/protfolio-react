@@ -236,7 +236,7 @@
   height: 115%; 
   object-fit: contain;
   object-position: bottom; 
-  transition: transform 0.5s ease;
+  transition: transform 0.8s ease;
 }
 
 .hero-image-wrapper:hover .hero-image {
