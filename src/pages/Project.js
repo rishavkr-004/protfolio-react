@@ -19,14 +19,14 @@ function Project({ persona }) {
     },
     {
       id: 2,
-      category: "Web Application",
-      title: "Projexa",
-      description: "A collaborative project management tool allowing teams to track tasks, manage workflows, and handle version control seamlessly in one unified dashboard.",
-      tech: ["JavaScript", "Python", "CSS3"],
+      category: "Full-stack ML app",
+      title: "Bengaluru House Price Prediction Web App",
+      description: "Developed a full-stack ML web app for predicting Bengaluru house prices using Flask API and a trained Linear Regression model. Deployed backend on Render and frontend on Vercel with real-time API integration.",
+      tech: ["Html/ Css/ JavaScript/ jQuery", "Python/ Flask/ Flask-CORS", "Machine Learning(Scikit-learn, Numpy, Pandas)"],
       // Update this path when you have the Projexa image!
-      image: require('../assets/projectimg/campusconnect.jpg'), 
-      github: "https://github.com/SanskarSaurabh/Projexa-College-Project",
-      live: "https://krmuconnect.vercel.app/"
+      image: require('../assets/projectimg/bengluru_house_price_prediction.png'), 
+      github: "https://github.com/rishavkr-004/bengaluru-house-price",
+      live: "https://bengaluru-house-price-zeta.vercel.app/"
     }
   ];
 

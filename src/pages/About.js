@@ -65,13 +65,16 @@ function About({ persona }) {
                 <span className="skill-tag">JavaScript / HTML / CSS</span>
                 <span className="skill-tag">Git / GitHub</span>
                 <span className="skill-tag">Python</span>
+                <span className="skill-tag">Machine Learning</span>
+                <span className="skill-tag">Flask/Flask-cors</span>
                 <span className="skill-tag">Django</span>
               </>
             ) : (
               <>
                 <span className="skill-tag">Python (Pandas, NumPy, Matplotlib, Scikit-learn)</span>
+                <span className="skill-tag">Machine Learning</span>
                 <span className="skill-tag">Django</span>
-                <span className="skill-tag">Flask</span>
+                <span className="skill-tag">Flask/Flask-cors</span>
                 <span className="skill-tag">Postman</span>
                 <span className="skill-tag">Jupyter Notebook</span>
                 <span className="skill-tag">PostgreSQL, SQL & Relational Databases</span>
