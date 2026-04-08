@@ -34,23 +34,67 @@ function Project({ persona }) {
     {
       id: 1,
       category: "Dashboard & Reporting",
-      title: "Sales CAGR Tracker",
-      description: "Designed a dynamic, interactive dashboard utilizing custom DAX measures to track Compound Annual Growth Rate (CAGR) and highlight regional sales deficiencies.",
+      title: "Blinkit_Sales_Analysis",
+      description: "Developed an interactive sales dashboard to analyze Blinkit's retail performance. It highlights total sales, average sales, item distribution, outlet types, and customer ratings. The dashboard helps in identifying top-performing products and outlet trends for better business decisions.",
       tech: ["Power BI", "DAX", "Excel"],
       // Image pulled from the public/images folder
-      image: "/images/sales.png", 
-      github: "https://github.com/yourusername/sales-cagr",
+      image: require('../assets/projectimg/Blinkit_Sales_Analysis.jpg'),
+      github: "https://github.com/rishavkr-004/BlinkIT_Data_Analysis.git",
       live: "https://your-portfolio-link.com/sales-dashboard"
     },
     {
       id: 2,
-      category: "Data Pipeline",
-      title: "Customer Churn Analysis",
-      description: "Extracted and cleaned historical customer data using complex SQL indexing, then applied predictive Python scripts to identify primary keys associated with high churn risk.",
-      tech: ["SQL", "Python", "Pandas"],
+      category: "Dashboard & Reporting",
+      title: "Forcasting_Student_Result_Analysis",
+      description: "Created a student performance dashboard to analyze scores based on gender, parental education, and test preparation. It helps in understanding learning patterns and identifying factors affecting student success.",
+      tech: ["Tableau", "Calculated Fields", "SQL", "EDA", "ML", "Python", "Excel"],
       // Image pulled from the public/images folder
-      image: "/images/churn.png", 
-      github: "https://github.com/yourusername/churn-analysis",
+      image: require('../assets/projectimg/forcasting_Student_Result.png'),
+      github: "https://github.com/rishavkr-004/Understanding_and_Forecasting_of_Student_Performance_in_India.git",
+      live: "https://your-portfolio-link.com/sales-dashboard"
+    },
+    {
+      id: 3,
+      category: "Dashboard & Reporting",
+      title: "Electric_Car_Sales_Analysis",
+      description: "Built a comprehensive EV analysis dashboard to track total vehicles, average electric range, and adoption trends across states. It provides insights into top manufacturers, CAFV eligibility, and yearly growth of electric vehicles.",
+      tech: ["Tableau", "Calculated Fields", "Excel"],
+      // Image pulled from the public/images folder
+      image: require('../assets/projectimg/Elec_Dashboard.png'),
+      github: "https://github.com/rishavkr-004/Electrical_Vehicle_Data_Analysis_on-_Tableaue.git",
+      live: "https://your-portfolio-link.com/churn-report"
+    },
+    {
+      id: 4,
+      category: "Dashboard & Reporting",
+      title: "Mobile_Sales_Analysis",
+      description: "Developed a mobile sales dashboard to track revenue, units sold, and customer demographics. It highlights sales trends, top brands, and payment methods to support data-driven business strategies.",
+      tech: ["Tableau", "Calculated Fields", "Excel"],
+      // Image pulled from the public/images folder
+      image: require('../assets/projectimg/Mobile Sales Dashboard.png'),
+      github: "https://github.com/rishavkr-004/Automobile_Data_Analysis.git",
+      live: "https://your-portfolio-link.com/churn-report"
+    },
+    {
+      id: 5,
+      category: "Dashboard & Reporting",
+      title: "Titanic_Passanger_Survival_Analysis",
+      description: "Created a Titanic dataset dashboard to analyze survival rates based on gender, class, and embarkation points. It provides insights into passenger distribution and key factors influencing survival.",
+      tech: ["Tableau", "Calculated Fields", "Excel"],
+      // Image pulled from the public/images folder
+      image: require('../assets/projectimg/Titanic_Dashboard.png'),
+      github: "https://github.com/rishavkr-004/Titanic-Data-Analysis.git",
+      live: "https://your-portfolio-link.com/churn-report"
+    },
+    {
+      id: 6,
+      category: "Dashboard & Reporting",
+      title: "Human_Organ_Health_Analysis",
+      description: "Designed a health analytics dashboard to assess risk factors such as smoking habits, BMI, and age. It provides insights into patient health conditions and helps in identifying high-risk groups for preventive care.",
+      tech: ["Power BI", "DAX", "Excel"],
+      // Image pulled from the public/images folder
+      image: require('../assets/projectimg/Health_Dashboard.jpg'),
+      github: "https://github.com/rishavkr-004/Smoking_Health_Risk_Analysis.git",
       live: "https://your-portfolio-link.com/churn-report"
     }
   ];
