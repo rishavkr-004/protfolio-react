@@ -17,7 +17,7 @@ function Home({ persona }) {
     : "I transform complex datasets into actionable insights using Python, SQL, and Power BI. Explore my analytical projects and reach out for data-driven solutions.";
     
   // Dynamic Resume Link & Download Name
-  const resumeFile = isWebDev ? "/Rishav_Web_Resume.pdf" : "/Rishav_Data_Resume.pdf";
+  const resumeFile = isWebDev ? "/Rishav.pdf" : "/rishav_resume.pdf";
   const downloadName = isWebDev ? "Rishav_Web_Developer_CV.pdf" : "Rishav_Data_Analyst_CV.pdf";
 
   const handleResumeDownload = () => {

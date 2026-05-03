@@ -27,7 +27,18 @@ function Project({ persona }) {
       image: require('../assets/projectimg/bengluru_house_price_prediction.png'), 
       github: "https://github.com/rishavkr-004/bengaluru-house-price",
       live: "https://bengaluru-house-price-zeta.vercel.app/"
-    }
+    },
+    {
+      id: 3,
+      category: "Full Stack App",
+      title: "Task_Manager",
+      description: "Built a MERN-based task management system with JWT authentication and role-based access control, enabling task assignment, status tracking, and dashboard analytics; deployed using Vercel and Railway.",
+      tech: ["MERN", "Axios", "Git/Github", "React Router DOM"],
+      // Image pulled from src/assets/projectimg folder
+      image: require('../assets/projectimg/task_manager.jpg'),
+      github: "https://github.com/rishavkr-004/task_manager.git",
+      live: "https://task-manager-pink-omega.vercel.app"
+    }, 
   ];
 
   const dataProjects = [

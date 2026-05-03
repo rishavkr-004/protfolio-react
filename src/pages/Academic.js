@@ -36,8 +36,8 @@ function Academic() {
       school: "J.N College, Madhubani",
       year: "2019",
       desc: "Completed higher secondary education with a focus on core sciences and mathematics.",
-      fileName: "Rishav_12th_Certificate.pdf",
-      filePath: require('../assets/certificate/12th_marksheet.pdf'),
+      fileName: "rishav mishra 12th marksheet.pdf",
+      filePath: require('../assets/certificate/12th marksheet rishav.pdf'),
     },
     {
       id: "10th",
