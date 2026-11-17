@@ -62,11 +62,11 @@ function Home({ persona }) {
 
           <div className="hero-stats">
             <div className="stat-item">
-              <h2>{isWebDev ? "2" : "10+"}</h2>
+              <h2>{isWebDev ? "7" : "12+"}</h2>
               <p>{isWebDev ? "Live Website" : "Datasets Analyzed"}</p>
             </div>
             <div className="stat-item">
-              <h2>{isWebDev ? "5" : "5"}</h2>
+              <h2>{isWebDev ? "5" : "9"}</h2>
               <p>{isWebDev ? "Project Done" : "Dashboards Created"}</p>
             </div>
             <div className="stat-item">
