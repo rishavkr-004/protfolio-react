@@ -38,7 +38,18 @@ function Project({ persona }) {
       image: require('../assets/projectimg/task_manager.jpg'),
       github: "https://github.com/rishavkr-004/task_manager.git",
       live: "https://task-manager-pink-omega.vercel.app"
-    }, 
+    },
+    {
+      id: 4,
+      category: "Full Stack App",
+      title: "Retail_Sales_Intelligence",
+      description: "My project is a Retail Sales Intelligence Platform, where I used Python, SQL, PostgreSQL, Machine Learning, Power BI, and Looker Studio to analyze retail data. I developed solutions for sales prediction, customer segmentation, customer return prediction, and sales forecasting. I also built a Flask API to deploy the trained models on Render. The main goal was to convert raw retail data into meaningful business insights and predictive solutions.",
+      tech: ["Python","SQL","PostgreSQL","Machine Learning","Model","Looker Studio","Flask","Render"],
+      // Image pulled from src/assets/projectimg folder
+      image: require('../assets/projectimg/Retail_Sales_Intelligence.jpg'),
+      github: "https://github.com/rishavkr-004/Retail-Sales-Intelligence",
+      live: "https://retail-sales-intelligence-pi.vercel.app"
+    },
   ];
 
   const dataProjects = [
